@@ -1,5 +1,5 @@
-import { firebase } from '@firebase/app'
-import { database } from '@firebase/database'
+import { firebase } from '@firebase/app';
+import { database } from '@firebase/database';
 // Initialize Firebase
  export const config = {
     apiKey: "AIzaSyDrT4Z65vOkqojuI5Ywv0UbaxxqNn8uRqk",

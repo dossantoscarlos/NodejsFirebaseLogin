@@ -6,22 +6,29 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 let config = {
    entry: {
      app: './src/index.js',
-     home: './src/home.js',
-     login: './src/login.js',
+     home: './src/code/home.js',
+     login: './src/code/login.js',
+     estatistica: './src/code/estatistica.js',
    },
    plugins: [
      new CleanWebpackPlugin(['public/*']),
      new HtmlWebpackPlugin({
         title : 'Login',
-        excludeChunks: ['home'],
+        excludeChunks: ['home','estatistica'],
         filename: 'index.html',
-        template: './src/index.html'
+        template: './src/template/index.html'
       }),
       new HtmlWebpackPlugin({
         title: 'Home',
-        excludeChunks: ['login'],
+        excludeChunks: ['login','estatistica'],
         filename: 'home.html',
-        template: './src/home.html'
+        template: './src/template/home.html'
+      }),
+      new HtmlWebpackPlugin({
+        title: 'Estatistica',
+        excludeChunks: ['login','home'],
+        filename: 'estatistica.html',
+        template: './src/template/estatistica.html'
       }),
      new webpack.optimize.CommonsChunkPlugin({
         name: 'vendor',

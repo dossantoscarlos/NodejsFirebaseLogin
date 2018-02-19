@@ -19,7 +19,7 @@ export default function login () {
       firebase.rootRef.ref("Usuario").child(key).on('value',function (snapshot){
           var resultado = (String(snapshot.val().cpf) == String(l) && String(snapshot.val().senha) == String(pcripto))? true : false;
           if (resultado == true){
-            window.location.href='./home.html'
+            window.location.href='home.html';
           }else { window.alert('CPF ou senha Errada'); }
         });
     };
